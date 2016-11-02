@@ -19,6 +19,7 @@ src/addons/transitions/__tests__/ReactCSSTransitionGroup-test.js
 * should transition from false to one
 
 src/addons/transitions/__tests__/ReactTransitionGroup-test.js
+* should handle willEnter correctly
 * should warn for duplicated keys with component stack info
 
 src/isomorphic/classic/__tests__/ReactContextValidator-test.js
@@ -607,8 +608,6 @@ src/renderers/shared/stack/reconciler/__tests__/ReactUpdates-test.js
 * throws in setState if the update callback is not a function
 * throws in replaceState if the update callback is not a function
 * throws in forceUpdate if the update callback is not a function
-* does not update one component twice in a batch (#2410)
-* unstable_batchedUpdates should return value from a callback
 
 src/renderers/shared/stack/reconciler/__tests__/refs-test.js
 * Should increase refs with an increase in divs

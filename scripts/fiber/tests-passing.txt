@@ -90,7 +90,6 @@ src/addons/transitions/__tests__/ReactTransitionChildMapping-test.js
 * should support mergeChildMappings with undefined input
 
 src/addons/transitions/__tests__/ReactTransitionGroup-test.js
-* should handle willEnter correctly
 * should handle enter/leave/enter/leave correctly
 * should handle enter/leave/enter correctly
 * should handle entering/leaving several elements at once
@@ -788,6 +787,8 @@ src/renderers/shared/fiber/__tests__/ReactIncremental-test.js
 * calls componentWill* twice if an update render is aborted
 * does not call componentWillReceiveProps for state-only updates
 * skips will/DidUpdate when bailing unless an update was already in progress
+* performs batched updates at the end of the batch
+* can nest batchedUpdates
 
 src/renderers/shared/fiber/__tests__/ReactIncrementalReflection-test.js
 * handles isMounted even when the initial render is deferred
@@ -1106,7 +1107,9 @@ src/renderers/shared/stack/reconciler/__tests__/ReactUpdates-test.js
 * should not reconcile children passed via props
 * should queue nested updates
 * calls componentWillReceiveProps setState callback properly
+* does not update one component twice in a batch (#2410)
 * does not update one component twice in a batch (#6371)
+* unstable_batchedUpdates should return value from a callback
 
 src/renderers/shared/stack/reconciler/__tests__/Transaction-test.js
 * should invoke closers with/only-with init returns
